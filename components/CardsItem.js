@@ -1,10 +1,10 @@
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 import React, {memo} from 'react';
-import {Card, useTheme} from 'react-native-paper';
+import {Button, Card, useTheme} from 'react-native-paper';
 import moment from 'moment';
 import {useNavigation} from '@react-navigation/native';
 
-const CardsItem = ({itemData}) => {
+const CardsItem = ({itemData, handleDelete}) => {
   const theme = useTheme();
   const navigation = useNavigation();
   const handlePressable = () => {
@@ -41,6 +41,11 @@ const CardsItem = ({itemData}) => {
             {moment(itemData?.pubDate).format('DD-MMM-YYYY HH:mm')}
           </Text>
         </Card.Content>
+        {handleDelete && (
+          <Card.Actions>
+            <Button>Delete</Button>
+          </Card.Actions>
+        )}
       </Card>
     </Pressable>
   );

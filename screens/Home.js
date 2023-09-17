@@ -1,7 +1,14 @@
 import {FlatList, StyleSheet, Text, View} from 'react-native';
 import React, {useState} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {Appbar, Chip, Button} from 'react-native-paper';
+import {
+  Appbar,
+  Chip,
+  Button,
+  ProgressBar,
+  MD2Colors,
+  MD3Colors,
+} from 'react-native-paper';
 import {check, multiply} from '../assets';
 import CardsItem from '../components/CardsItem';
 
@@ -11,6 +18,7 @@ const Home = () => {
   const [newsData, setNewsData] = useState();
   const [error, setError] = useState();
   const [nextPage, setnextPage] = useState('');
+  const [loading, setLoading] = useState(false);
   const categories = [
     'Technology',
     'Business',
@@ -34,20 +42,25 @@ const Home = () => {
         ? `&category=${selectedCategory.join(',')}`
         : ''
     }${nextPage?.length > 0 ? `&page=${nextPage}` : ''}`;
-
-    await fetch(URL)
-      .then(res => res.json())
-      .then(data => {
-        setNewsData(data?.results);
-        setnextPage(data?.nextPage);
-      })
-      .catch(err => setError(err));
+    try {
+      setLoading(true);
+      await fetch(URL)
+        .then(res => res.json())
+        .then(data => {
+          setNewsData(data?.results);
+          setnextPage(data?.nextPage);
+          setLoading(false);
+        })
+        .catch(err => setError(err));
+    } catch {
+      setLoading(false);
+    }
   };
 
   return (
     <View style={styles.mainContainer}>
       <Appbar.Header>
-        <Appbar.Content title="Home"></Appbar.Content>
+        <Appbar.Content title="News Headlines"></Appbar.Content>
       </Appbar.Header>
       <View style={styles.filterContainer}>
         {categories.map(item => (
@@ -71,13 +84,19 @@ const Home = () => {
           Refresh
         </Button>
       </View>
-
+      <ProgressBar
+        visible={loading}
+        style={{height: 5}}
+        indeterminate
+        color={MD3Colors.error50}
+      />
       <FlatList
+        keyExtractor={item => item.article_id}
         onEndReached={() => handleRefresh()}
         style={styles.flatlist}
         data={newsData}
         renderItem={({item, index}) => (
-          <CardsItem itemData={item} />
+          <CardsItem itemData={item} handleDelete={false} />
         )}></FlatList>
     </View>
   );
