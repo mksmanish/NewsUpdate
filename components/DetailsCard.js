@@ -15,7 +15,7 @@ const DetailsCard = ({details}) => {
   }
 
   return (
-    <View style={{padding: 20}}>
+    <View style={{padding: 5}}>
       <ScrollView>
         <Text style={{color: 'black'}} variant="headlineMedium">
           {details?.title}
