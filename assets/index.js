@@ -5,3 +5,5 @@ export const homeBold = require('./images/homeBold.png');
 export const homeOutline = require('./images/homeOutline.png');
 export const moreBold = require('./images/moreBold.png');
 export const moreOutline = require('./images/moreOutline.png');
+export const refresh = require('./images/refresh.png');
+export const checks = require('./images/checks.png');

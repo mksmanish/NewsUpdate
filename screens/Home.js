@@ -1,4 +1,4 @@
-import {FlatList, StyleSheet, Text, View} from 'react-native';
+import {FlatList, Pressable, StyleSheet, Text, View} from 'react-native';
 import React, {useState} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {
@@ -9,7 +9,7 @@ import {
   MD2Colors,
   MD3Colors,
 } from 'react-native-paper';
-import {check, multiply} from '../assets';
+import {check, checks, greenCheck, multiply, refresh} from '../assets';
 import CardsItem from '../components/CardsItem';
 
 const API_KEY = 'pub_29594202de8a8aa61b1085bb700f1edb99349';
@@ -70,6 +70,7 @@ const Home = () => {
           <Chip
             key={item}
             mode="flat"
+            icon={selectedCategory.includes(item) ? checks : null}
             style={styles.chipItem}
             textStyle={{fontWeight: '500', padding: 2, color: 'white'}}
             showSelectedOverlay
@@ -78,11 +79,12 @@ const Home = () => {
             {item}
           </Chip>
         ))}
+
         <Button
           mode="contained"
           style={styles.button}
           labelStyle={{fontSize: 14, margin: 'auto'}}
-          icon={'sync'}
+          icon={refresh}
           onPress={handleRefresh}>
           Refresh
         </Button>

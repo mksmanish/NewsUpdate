@@ -25,7 +25,7 @@ const CardsItem = ({itemData, handleDelete}) => {
             uri:
               itemData?.image_url !== null
                 ? itemData?.image_url
-                : 'https://media.istockphoto.com/id/1221950506/vector/live-breaking-news-headline-with-blue-and-red-color-background.jpg?s=2048x2048&w=is&k=20&c=ciQyOPrg2T8Pav0yC12j4izKrG6SpI3lbJEbaCCAXR8=',
+                : 'https://cdn.pixabay.com/photo/2014/05/21/22/28/old-newspaper-350376_1280.jpg',
           }}
         />
         <Card.Title
