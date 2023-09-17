@@ -3,26 +3,41 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Home from './Home';
 import Saved from './Saved';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import TabIcon from '../components/TabIcon';
+import {homeBold, homeOutline, moreBold, moreOutline} from '../assets';
 
 const HomeScreen = () => {
   const Tab = createBottomTabNavigator();
   return (
     <Tab.Navigator screenOptions={{headerShown: false}}>
       <Tab.Screen
-        options={{
-          tabBarIcon(props) {
-            return (
-              <Icon
-                name={props.focused ? 'home-circle' : 'home-circle-outline'}
-              />
-            );
-          },
-        }}
-        name="Home"
+        name="."
         component={Home}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({focused}) => (
+            <TabIcon
+              label={'Home'}
+              focused={focused}
+              icon={focused ? homeBold : homeOutline}
+            />
+          ),
+        }}
       />
-      <Tab.Screen name="Saved" component={Saved} />
+      <Tab.Screen
+        name=".."
+        component={Saved}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({focused}) => (
+            <TabIcon
+              label="Saved"
+              focused={focused}
+              icon={focused ? moreBold : moreOutline}
+            />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 };

@@ -26,6 +26,9 @@ const Home = () => {
     'Politics',
     'Health',
     'Food',
+    'Science',
+    'Environment',
+    'Entertainment',
   ];
 
   const handleSelect = item => {
@@ -116,8 +119,8 @@ const styles = StyleSheet.create({
   chipItem: {
     marginHorizontal: 5,
     borderRadius: 25,
-    margin: 2,
-    backgroundColor: 'green',
+    margin: 4,
+    backgroundColor: 'orange',
   },
   button: {
     maxWidth: 400,
