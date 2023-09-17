@@ -7,3 +7,4 @@ export const moreBold = require('./images/moreBold.png');
 export const moreOutline = require('./images/moreOutline.png');
 export const refresh = require('./images/refresh.png');
 export const checks = require('./images/checks.png');
+export const splash = require('./images/splash.png');
