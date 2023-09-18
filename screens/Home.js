@@ -12,7 +12,8 @@ import {
 import {check, checks, greenCheck, multiply, refresh} from '../assets';
 import CardsItem from '../components/CardsItem';
 
-const API_KEY = 'pub_29594202de8a8aa61b1085bb700f1edb99349';
+const API_KEY = '';
+// use your API_kEY from news.io
 const Home = () => {
   const [selectedCategory, SetSelectedCategory] = useState([]);
   const [newsData, setNewsData] = useState();
