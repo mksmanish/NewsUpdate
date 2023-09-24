@@ -1,3 +1,9 @@
+Used https://newsdata.io website ,Register on it to get the API_KEY for different set of News Items.
+Also saving the data in async storage for future use and view news article in details.
+
+<img width="1078" alt="Screenshot 2023-09-24 at 11 50 26 PM" src="https://github.com/mksmanish/NewsUpdate/assets/30216938/8b94a277-994f-4db8-a733-5083e7739639">
+
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
