@@ -1,6 +1,6 @@
-Used https://newsdata.io website ,Register on it to get the API_KEY for different set of News Items.
-Usage of react-native paper for material UI.
-Also saving the data in async storage for future use and view news article in details.
+1)Used https://newsdata.io website ,Register on it to get the API_KEY for different set of News Items.
+2)Also saving the data in async storage for future use and view news article in details.
+3)Usage of react-native paper for material UI.
 
 <img width="1078" alt="Screenshot 2023-09-24 at 11 50 26 PM" src="https://github.com/mksmanish/NewsUpdate/assets/30216938/8b94a277-994f-4db8-a733-5083e7739639">
 
